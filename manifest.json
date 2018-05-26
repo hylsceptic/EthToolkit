@@ -1,6 +1,6 @@
   {
     "name": "Ethereum price",
-    "version": "v0.0.1",
+    "version": "0.0.1",
     "description": "show ethereum price",
     "permissions": ["storage"],
     "background": {
