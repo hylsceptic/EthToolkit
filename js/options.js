@@ -1,8 +1,12 @@
-(function() {
-	getPrice()
-	getGas()
-	// body...
-})();
+document.addEventListener('DOMContentLoaded', function() {
+   // your code here
+   	setTimeout(getPrice, 40)
+   	setTimeout(getGas,   40)
+}, false);
+function sleep(ms) {
+  // return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function httpGet(theUrl)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -26,4 +30,16 @@ function getGas() {
 	text.innerHTML = resp.safeLow;
 	var text = document.getElementById("fastest");
 	text.innerHTML = resp.fastest;
+}
+
+document.getElementById("button").onclick = function search() {
+	var input = document.getElementById("address");
+	if(input.value.length == 42){
+		chrome.tabs.create({ url: "https://etherscan.io/address/" + input.value })
+	} else {
+
+		chrome.tabs.create({ url: "https://etherscan.io/tx/" + input.value })
+	}
+		
+
 }
