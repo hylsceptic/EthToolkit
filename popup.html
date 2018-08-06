@@ -1,46 +1,69 @@
-  <!DOCTYPE html>
-  <html>
-    <head>
-      <style>
-        table, th, td {
-          border: 1px;
-          width: 200px;
-        }
-      </style>
-    </head>
-    <body>
-      <table>
-        <tr>  
-          <h4 id="text-text">Eth price</h4>
-        </tr>
-        <tr>  
-          <td id="text-text">CMC:</td>
-          <td id="price">price</td>
-        </tr>
-      </table>
-      <table>
-        <tr>
-          <h4 id="text-text">Gas price</h4>
-        </tr>
-        <tr>
-          <td id="text-text">SafeLow:</td>
-          <td id="safeLow">gasprice</td>
-        </tr>
-        <tr>
-          <td id="text-text">Standard:</td>
-          <td id="standard">gasprice</td>
-        </tr>
-        <tr>
-          <td id="text-text">Fastest:</td>
-          <td id="fastest">gasprice</td>
-        </tr>
-      </table>
-        Address: <input id="address" type="text" name="FirstName" value="">
-        <button id="button">Search</button><br>
-        <br>
-        <br>
-        <br>
-      <!-- <script src="popup.js"></script> -->
-    </body>
-    <script src="js/options.js"></script>
-  </html>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="/dist/css/main.css">
+</head>
+
+<body>
+  <img id="figure" src="/img/fig1.png" />
+  <main>
+    <table class="table">
+      <tr>
+        <h2 id="text-text">
+          <i class="fab fa-ethereum"></i>
+          Eth price</h2>
+      </tr>
+      <tr>
+        <td id="text-text" class="label">
+          CMC:
+        </td>
+        <td id="price">price</td>
+      </tr>
+    </table>
+    <table class="table">
+      <tr>
+        <h2 id="text-text">
+          <i class="fas fa-gas-pump"></i>
+          <span>Gas price</span>
+        </h2>
+      </tr>
+      <tr>
+        <td id="text-text" class="label">SafeLow:</td>
+        <td id="safeLow">gasprice</td>
+      </tr>
+      <tr>
+        <td id="text-text" class="label">Standard:</td>
+        <td id="standard">gasprice</td>
+      </tr>
+      <tr>
+        <td id="text-text" class="label">Fastest:</td>
+        <td id="fastest">gasprice</td>
+      </tr>
+    </table>
+    <div class="search">
+      <h3>
+        <i class="fas fa-search-plus"></i>
+        Look up</h3>
+      <div>
+        <input class="input" id="address" type="text" name="FirstName" placeholder="Address or Tx">
+      </div>
+      <div>
+        <button class="button" id="button">Search</button>
+      </div>
+
+    </div>
+    <div class="hline"></div>
+    <div class='footIcon'>
+
+      <a id="github" href="https://github.com/hylsceptic/EthToolkit" target="_blank">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+    </div>
+  </main>
+</body>
+<script src="js/options.js"></script>
+
+</html>
