@@ -1,14 +1,15 @@
   {
-    "name": "Ethereum price",
-    "version": "0.0.1",
-    "description": "show ethereum price",
+    "name": "Ethereum toolkit",
+    "version": "0.1.0",
+    "description": "Ethereum helpful tools",
     "permissions": ["storage"],
     "background": {
       "page": "background.html",
-      // "scripts": ["js/background.js"],
       "persistent": false
     },
+    "icons": {"128": "/images/icon_128.png"},
     "browser_action": {
+      "default_icon": "/images/icon.png",
       "default_popup": "popup.html"
      },
 
