@@ -24,7 +24,7 @@ function getPrice() {
     httpGet("https://api.coinmarketcap.com/v2/ticker/1027/")
   );
   var price = resp.data.quotes.USD.price;
-  text.innerHTML = price.toString().substring(0, 6);
+  text.innerHTML = price.toString().substring(0, 5);
 }
 
 function getGas() {
@@ -41,9 +41,19 @@ function getGas() {
 
 document.getElementById("button").onclick = function search() {
   var input = document.getElementById("address");
-  if (input.value.length == 42) {
-    chrome.tabs.create({ url: "https://etherscan.io/address/" + input.value });
-  } else {
-    chrome.tabs.create({ url: "https://etherscan.io/tx/" + input.value });
+  if (input.value.substring(0, 2) == "0x") {
+    if (input.value.length == 42) {
+      chrome.tabs.create({
+        url: "https://etherscan.io/address/" + input.value
+      });
+    } else {
+      chrome.tabs.create({ url: "https://etherscan.io/tx/" + input.value });
+    }
+  } else if (
+    input.value.substring(input.value.length - 4, input.value.length) == ".eth"
+  ) {
+    chrome.tabs.create({
+      url: "https://etherscan.io/enslookup?q=" + input.value
+    });
   }
 };
