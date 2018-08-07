@@ -1,6 +1,6 @@
 (function() {
 	startRequest();
-	setInterval(startRequest, 5000);
+	setInterval(startRequest, 15000);
 })();
 function httpGet(theUrl)
 {
