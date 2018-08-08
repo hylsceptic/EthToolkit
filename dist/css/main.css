@@ -2,15 +2,20 @@ table,
 th,
 td {
   border: 1px;
-  width: 200px; }
+  width: 100%;
+  margin: 0; }
 
 h2 {
   margin: 0.5rem 0 0.5rem 0; }
 
+.address {
+  font-size: 10.5px;
+  margin: 0; }
+
 body {
   margin: 0 0 1rem 0;
   background-color: #fff;
-  width: 220px; }
+  width: 320px; }
 
 main {
   margin-top: 0;
@@ -20,9 +25,16 @@ main {
 i {
   color: #666; }
 
+#balance-text {
+  margin: 0.5rem 0 0 0; }
+
 .table {
   width: 100%;
-  margin-left: 1rem; }
+  padding-left: 1rem; }
+
+.text-right {
+  text-align: right;
+  vertical-align: bottom; }
 
 .label {
   width: 70%; }
@@ -36,6 +48,10 @@ i {
   margin-right: 0px;
   border: 2px;
   float: right; }
+
+#balance {
+  text-align: right;
+  margin: 0; }
 
 .hline {
   height: 1px;
@@ -56,3 +72,13 @@ i {
   margin: 0;
   width: 100%;
   background-position: fixed; }
+
+.addManager {
+  display: none; }
+  .addManager.show {
+    display: block; }
+
+.button-close {
+  border: none;
+  background: #fff;
+  color: #444; }

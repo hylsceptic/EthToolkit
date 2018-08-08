@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
     crossorigin="anonymous">
   <link rel="stylesheet" href="/dist/css/main.css">
@@ -13,45 +13,71 @@
 <body>
   <img id="figure" src="/images/fig1.png" />
   <main>
+    <h2 id="text-text">
+      <i class="fab fa-ethereum"></i>
+      Eth price</h2>
     <table class="table">
-      <tr>
-        <h2 id="text-text">
-          <i class="fab fa-ethereum"></i>
-          Eth price</h2>
-      </tr>
       <tr>
         <td id="text-text" class="label">
           CMC:
         </td>
-        <td id="price">price</td>
+        <td id="price" class="text-right">price</td>
       </tr>
     </table>
+    <h2 id="text-text">
+      <i class="fas fa-gas-pump"></i>
+      <span>Gas price</span>
+    </h2>
     <table class="table">
       <tr>
-        <h2 id="text-text">
-          <i class="fas fa-gas-pump"></i>
-          <span>Gas price</span>
-        </h2>
-      </tr>
-      <tr>
         <td id="text-text" class="label">SafeLow:</td>
-        <td id="safeLow">gasprice</td>
+        <td id="safeLow" class="text-right">gasprice</td>
       </tr>
       <tr>
         <td id="text-text" class="label">Standard:</td>
-        <td id="standard">gasprice</td>
+        <td id="standard" class="text-right">gasprice</td>
       </tr>
       <tr>
         <td id="text-text" class="label">Fastest:</td>
-        <td id="fastest">gasprice</td>
+        <td id="fastest" class="text-right">gasprice</td>
       </tr>
     </table>
+
+    <table>
+      <tr>
+        <td>
+
+          <h3 id="balance-text">
+            <i class="fas fa-wallet"></i>
+            Balance
+          </h3>
+        </td>
+        <td id="balance" class="text-right">
+          balance
+        </td>
+      </tr>
+    </table>
+    <button class="button" id="btn-edit">Edit</button>
+
+    <div class="addManager">
+      <p>Address to watch:</p>
+      <div id=addresses>
+      </div>
+      <div>
+        <input class="input" id="address" type="text" name="FirstName" placeholder="Address">
+      </div>
+      <div class="div-btn">
+        <button class="button" id="add">Add</button>
+      </div>
+
+    </div>
+
     <div class="search">
       <h3>
         <i class="fas fa-search-plus"></i>
         Look up</h3>
       <div>
-        <input class="input" id="address" type="text" name="FirstName" placeholder="Address or Tx or ENS">
+        <input class="input" id="search" type="text" name="FirstName" placeholder="Address or Tx or ENS">
       </div>
       <div class="div-btn">
         <button class="button" id="button">Search</button>

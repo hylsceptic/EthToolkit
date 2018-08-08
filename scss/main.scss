@@ -2,17 +2,21 @@ table,
 th,
 td {
   border: 1px;
-  width: 200px;
+  width: 100%;
+  margin: 0;
 }
 
 h2 {
   margin: 0.5rem 0 0.5rem 0;
 }
-
+.address {
+  font-size: 10.5px;
+  margin: 0;
+}
 body {
   margin: 0 0 1rem 0;
   background-color: #fff;
-  width: 220px;
+  width: 320px;
 }
 main {
   margin-top: 0;
@@ -22,12 +26,19 @@ main {
 i {
   color: #666;
 }
+#balance-text {
+  margin: 0.5rem 0 0 0;
+}
 .table {
-  // display: block;
   width: 100%;
-  margin-left: 1rem;
+  padding-left: 1rem;
   // margin-top: 0.5rem;
   // margin-bottom: 0.5rem;
+}
+
+.text-right {
+  text-align: right;
+  vertical-align: bottom;
 }
 
 .label {
@@ -44,6 +55,11 @@ i {
   float: right;
 }
 
+#balance {
+  // display: inline;
+  text-align: right;
+  margin: 0;
+}
 .hline {
   // width: 100%;
   height: 1px;
@@ -66,4 +82,18 @@ i {
   margin: 0;
   width: 100%;
   background-position: fixed;
+}
+
+.addManager {
+  display: none;
+  // visibility: hidden;
+  &.show {
+    display: block;
+  }
+}
+
+.button-close {
+  border: none;
+  background: #fff;
+  color: #444;
 }
