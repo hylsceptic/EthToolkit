@@ -2,9 +2,9 @@ document.addEventListener(
   "DOMContentLoaded",
   function() {
     // your code here
-    setTimeout(getPrice, 40);
-    setTimeout(getGas, 40);
-    setTimeout(getBlance, 40);
+    setTimeout(getPrice, 30);
+    setTimeout(getGas, 30);
+    setTimeout(getBlance, 30);
   },
   false
 );
@@ -52,10 +52,12 @@ function getBlance() {
       for (i = 0; i < res.length; i++) {
         tb += Number(res[i].balance);
       }
-      totalBalance.innerHTML = (tb / 10 ** 18).toString().substring(0, 4);
+      totalBalance.innerHTML =
+        "Ξ&nbsp;" + (tb / 10 ** 18).toString().substring(0, 4);
     }
   } else {
-    totalBalance.innerHTML = "0";
+    totalBalance.innerHTML =
+      "Ξ&nbsp;0&nbsp;(Add&nbsp;address&nbsp;to&nbsp;watch)";
   }
 }
 
@@ -132,7 +134,11 @@ function showAdds() {
   for (i = 0; i < adds.length; i++) {
     text += `     
     <div class="address">
-    <button class="button-close" id="${adds[i]}">x</button> ${adds[i]}</div>`;
+    <button class="button-close" id="${adds[i]}">x</button> 
+    <a href="https://etherscan.io/address/${adds[i]}" target="_blank">${
+      adds[i]
+    }</a>
+    </div>`;
   }
   text += "<br>";
   addTable.innerHTML = text;

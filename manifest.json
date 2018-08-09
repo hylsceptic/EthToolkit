@@ -1,17 +1,17 @@
-  {
-    "name": "Ethereum toolkit",
-    "version": "0.1.2",
-    "description": "Ethereum helpful tools",
-    "permissions": ["storage"],
-    "background": {
-      "page": "background.html",
-      "persistent": true
-    },
-    "icons": {"128": "/images/icon_128.png"},
-    "browser_action": {
-      "default_icon": "/images/icon.png",
-      "default_popup": "popup.html"
-     },
+{
+  "name": "Ethereum toolkit",
+  "version": "0.1.3",
+  "description": "Ethereum helpful tools",
+  "permissions": ["storage"],
+  "background": {
+    "page": "background.html",
+    "persistent": true
+  },
+  "icons": { "128": "/images/icon_128.png" },
+  "browser_action": {
+    "default_icon": "/images/icon.png",
+    "default_popup": "popup.html"
+  },
 
-    "manifest_version": 2
-  }
+  "manifest_version": 2
+}
