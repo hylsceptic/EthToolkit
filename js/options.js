@@ -5,6 +5,7 @@ document.addEventListener(
     setTimeout(getPrice, 30);
     setTimeout(getGas, 30);
     setTimeout(getBlance, 30);
+    setTimeout(updateCurrency, 30);
   },
   false
 );
@@ -18,6 +19,13 @@ const btnEdit = document.getElementById("btn-edit");
 const addTable = document.getElementById("addresses");
 const totalBalance = document.getElementById("balance");
 const addManager = document.querySelector(".addManager");
+const mainPage = document.getElementById("mainPage");
+const settingPage = document.getElementById("setting");
+const btnSetting = document.getElementById("btn-setting");
+const btnBack = document.getElementById("back");
+const currentCurrency = document.getElementById("current-currency");
+const setCurrency = document.getElementById("set-currency");
+const btnSetCurrency = document.getElementById("btn-set-currency");
 let showAdd = false;
 function httpGet(theUrl) {
   var xmlHttp = new XMLHttpRequest();
@@ -28,11 +36,52 @@ function httpGet(theUrl) {
 
 function getPrice() {
   var text = document.getElementById("price");
+  var currency = localStorage.getItem("currency");
+  if(currency == null) {
+    currency = "USD"
+  }
+  var unit;
+  console.log(currency);
+  switch(currency) {
+    case "USD":
+    unit="$";
+    break;
+    case "JPY":
+    unit="¥";
+    break;
+    case "CNY":
+    unit="￥";
+    break;
+    case "EUR":
+    unit="€";
+    break;
+    case "AUD":
+    unit="$";
+    break;
+    case "USD":
+    unit="$";
+    break;
+  }
+  console.log(unit)
   let resp = JSON.parse(
-    httpGet("https://api.coinmarketcap.com/v2/ticker/1027/")
+    httpGet(`https://api.coinmarketcap.com/v2/ticker/1027/?convert=${currency}`)
   );
-  var price = resp.data.quotes.USD.price;
-  text.innerHTML = price.toString().substring(0, 5);
+  var price = resp.data.quotes[currency].price;
+  text.innerHTML = numToStr(price)+`<span class="unit">&nbsp;${unit}</span>`;;
+}
+
+function numToStr(num) {
+  var str=""
+  num = Math.ceil(num*100);
+  str = '.' + (num%100).toString();
+  num = (num - num%100)/100;
+  while(num > 1000) {
+    str = ","+(num%1000).toString()+str;
+    num = (num - num%1000)/1000;
+  }
+  str = num.toString()+str;
+  return str;
+
 }
 
 function getBlance() {
@@ -66,11 +115,11 @@ function getGas() {
     httpGet("https://www.etherchain.org/api/gasPriceOracle")
   );
   var text = document.getElementById("standard");
-  text.innerHTML = resp.standard.toString().substring(0, 3);
+  text.innerHTML = resp.standard.toString().substring(0, 3)+`<span class="unit">&nbsp;Gwei</span>`;
   var text = document.getElementById("safeLow");
-  text.innerHTML = resp.safeLow.toString().substring(0, 3);
+  text.innerHTML = resp.safeLow.toString().substring(0, 3)+`<span class="unit">&nbsp;Gwei</span>`;
   var text = document.getElementById("fastest");
-  text.innerHTML = resp.fastest.toString().substring(0, 3);
+  text.innerHTML = resp.fastest.toString().substring(0, 3)+`<span class="unit">&nbsp;Gwei</span>`;
 }
 
 document.getElementById("button").onclick = function search() {
@@ -163,4 +212,34 @@ function setDelete() {
       getBlance();
     };
   }
+}
+
+btnSetting.onclick = function search() {
+  mainPage.classList.add("hidden");
+  settingPage.classList.remove("hidden");
+}
+btnBack.onclick = function search() {
+  mainPage.classList.remove("hidden");
+  settingPage.classList.add("hidden");
+  setTimeout(getPrice, 30);
+  setTimeout(getGas, 30);
+  setTimeout(getBlance, 30);
+  setTimeout(updateCurrency, 30);
+}
+
+function updateCurrency() {
+  var currency = localStorage.getItem("currency");
+  if(currency == null) {
+    currentCurrency.innerHTML = "USD";  
+  }
+  else {
+    currentCurrency.innerHTML = currency;
+  }
+  
+}
+
+btnSetCurrency.onclick = function search() {
+  var currency = setCurrency.value;
+  localStorage.setItem("currency", currency);
+  updateCurrency()
 }

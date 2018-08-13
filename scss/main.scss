@@ -97,3 +97,19 @@ i {
   background: #fff;
   color: #444;
 }
+
+.hidden {
+  display: none;
+}
+
+.menu-btn {
+  display: inline-block;
+  position: absolute;
+  z-index: 4;
+  right: 30px;
+}
+
+.unit {
+  color: #888;
+  font-size: 10px;
+}
