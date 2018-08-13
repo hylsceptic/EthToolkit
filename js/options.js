@@ -106,7 +106,7 @@ function getBlance() {
     }
   } else {
     totalBalance.innerHTML =
-      "Ξ&nbsp;0&nbsp;(Add&nbsp;address&nbsp;to&nbsp;watch)";
+      `<span class="unit">Ξ&nbsp;0&nbsp;(Add&nbsp;address&nbsp;to&nbsp;watch)</span>`;
   }
 }
 

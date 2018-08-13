@@ -15,7 +15,7 @@ h2 {
 body {
   margin: 0 0 1rem 0;
   background-color: #fff;
-  width: 320px; }
+  width: 340px; }
 
 main {
   margin-top: 0;
@@ -48,6 +48,9 @@ i {
   margin-right: 0px;
   border: 2px;
   float: right; }
+  .button:hover {
+    cursor: pointer;
+    background-color: #aaa; }
 
 #balance {
   text-align: right;
@@ -62,7 +65,7 @@ i {
   text-align: center; }
 
 .input {
-  margin: 0 0 0.5rem 0; }
+  margin: 0 0 0.5rem 1rem; }
 
 .div-btn {
   height: 23px; }
@@ -91,7 +94,13 @@ i {
   position: absolute;
   z-index: 4;
   right: 30px; }
+  .menu-btn .fas:hover {
+    cursor: pointer;
+    color: #222; }
 
 .unit {
   color: #888;
   font-size: 10px; }
+
+.secondary {
+  margin-left: 1rem; }
